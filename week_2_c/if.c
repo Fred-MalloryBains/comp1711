@@ -1,5 +1,18 @@
 #include <stdio.h>
 
+int conditional (){
+    int a = 1;
+    switch (a) {
+        case 0: printf ("0/n");
+        break;
+        case 1: printf ("1/n");
+        break;
+        default: break;
+
+    }
+}
+
+
 int main(){
 
     int mark = 200;
@@ -16,5 +29,6 @@ int main(){
         printf ("%d, is a pass\n", mark);
 
     }
+    conditional();
     return 0;
 }
