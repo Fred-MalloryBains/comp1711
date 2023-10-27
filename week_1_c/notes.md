@@ -34,3 +34,5 @@ int main() {
 
     return 0;
 }
+
+arrays of a string contain the terminating character 
