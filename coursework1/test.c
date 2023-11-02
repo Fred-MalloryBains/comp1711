@@ -23,15 +23,9 @@ int main(){
     int file_size = 59;
 
     char *arr [file_size];
-    int i = 0;
+    
 
-    while(fgets(line_buffer, buffersize, file) != NULL) {
-        printf ("%d %s", i ,  line_buffer);
-        arr[i] = line_buffer;
-        i += 1;
-        
-    }
-    printf ()
+
 
     /*
     char *arr[3];

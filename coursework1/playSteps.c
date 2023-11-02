@@ -58,40 +58,42 @@ void tokeniseRecord(const char *input, const char *delimiter,
 // Complete the main function
 int main() {
     // get length of file
-
+    FITNESS_DATA fitness_data[] = {};
     char filename[] = "FitnessData_2023.csv";
     FILE *file = open_file (filename, "r"); // file pointer
     int buffersize = 100;
     char line_buffer[buffersize];
     int file_size = 0;
+
+    char date[11];
+    char time[6];
+    char steps[10]; // large enough to hold up to 999999999 steps
     
     // getting the size of the file
     while(fgets(line_buffer, buffersize, file) != NULL) {
+        
+        
+        tokeniseRecord (line_buffer,",", date, time , steps);
+        strcopy (fitness_data[file_size].date, date);
+        strcopy (fitness_data[file_size].time , time);
+        fitness_data[file_size].steps = atoi(steps);
+
+
+
         file_size += 1;
+
     }
     printf("The number of lines in the file is %d\n", file_size);
 
-    char *arr [file_size];
-    int i = 0 ;
-    
-    int new_buffersize = 100;
-    char new_line_buffer[new_buffersize];
+   
 
-    // copying each line to an array called arr
-    while(fgets(new_line_buffer, new_buffersize, file) != NULL) {
-        
-        printf("%s\n", new_line_buffer);
+    int i = 0;
 
-        i += 1;
+    for (i = 0; i < 3; i++) {
+        printf ("%s/%s/%d", fitness_data[i].date,fitness_data[i].time,fitness_data[i].steps);
     }
 
-    /*
-    i = 0;
-
-    for (i =0 ; i < file_size; i++){
-        printf("%s\n",arr[i]);
-    }
-    */
+   
 
     fclose(file);
     return 0;
