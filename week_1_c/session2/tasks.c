@@ -52,8 +52,8 @@ int reverse(){
 int main()
 {
     reverse();
-     
-
+    int length;
+    char str[10];
     int i;
     for (i = length - 1; i >=0; i--) {
         printf ("%c", str[i]);

@@ -1,0 +1,9 @@
+plan for task 1 
+
+get the size of the file 
+create an array of that size 
+
+in a for loop for the size of the array 
+    assign each item a variable name "record" + i
+    have each item in the array correspond to the struct using tokenise record 
+
